@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Gaming Profile</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* particles */
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: cyan;
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(-10vh);}
+}
+
+/* card */
+.card {
+    position: relative;
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from {box-shadow: 0 0 10px cyan;}
+    to {box-shadow: 0 0 30px magenta;}
+}
+
+img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid cyan;
+    box-shadow: 0 0 15px cyan;
+}
+
+h1 {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* buttons */
+a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid cyan;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: cyan;
+    color: black;
+    transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_3c1b2b3f6b.mp3?filename=cyberpunk-moonlight-126499.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+    <img src="https://i.imgur.com/8Km9tLL.png">
+
+    <h1>YOUR NAME</h1>
+
+    <p>🎮 FPS Player | 🏆 Esports Grinding | 🇵🇰 Pakistan</p>
+
+    <a href="#">DISCORD</a>
+    <a href="#">YOUTUBE</a>
+    <a href="#">INSTAGRAM</a>
+
+</div>
+
+<script>
+// create particles
+for(let i=0;i<25;i++){
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random()*100 + "vw";
+    p.style.animationDuration = (Math.random()*5 + 5) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>
