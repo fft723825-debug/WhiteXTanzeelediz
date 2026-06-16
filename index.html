@@ -1,57 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>My Bio</title>
+
 <style>
-body {
+/* ===== BASIC RESET ===== */
+body{
   margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover;
+  overflow:hidden;
   font-family:Arial;
   color:white;
 }
 
-.card {
+/* ===== BACKGROUND (CHANGE THIS) ===== */
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url("bg.jpg") center/cover; /* 👈 CHANGE IMAGE */
+  filter:brightness(0.5);
+  z-index:0;
+}
+
+/* ===== PARTICLES LAYER ===== */
+#particles-js{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+/* ===== MAIN CARD ===== */
+.card{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+
   background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(20px);
   padding:40px;
   border-radius:20px;
   text-align:center;
-  backdrop-filter:blur(10px);
+  width:280px;
 }
 
-img {
-  width:120px;
-  height:120px;
+/* ===== PROFILE PIC ===== */
+.card img{
+  width:110px;
+  height:110px;
   border-radius:50%;
-  margin-bottom:15px;
+  object-fit:cover;
+  border:2px solid white;
 }
 
-a {
+/* ===== TEXT ===== */
+.card h1{margin:10px 0 5px;}
+.card p{opacity:0.7;font-size:13px;}
+
+/* ===== BUTTONS ===== */
+a{
   display:block;
-  color:white;
-  text-decoration:none;
-  margin:10px 0;
+  margin:8px 0;
   padding:10px;
-  background:rgba(255,255,255,0.1);
   border-radius:10px;
+  background:rgba(255,255,255,0.1);
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+a:hover{
+  background:rgba(255,255,255,0.25);
+  transform:scale(1.05);
+}
+
+/* ===== CUSTOM CURSOR ===== */
+body{
+  cursor: url("cursor.cur"), auto; /* 👈 CHANGE CURSOR */
 }
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
+<div class="bg"></div>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- CARD -->
 <div class="card">
-  <img src="https://i.imgur.com/avatar.png">
-  <h1>WhiteXTanzeeleditz</h1>
-  <p>Dark aesthetic bio page</p>
+  <img src="avatar.png"> <!-- 👈 PROFILE PIC -->
+  <h1>Your Name</h1>
+  <p>Your aesthetic bio ✨</p>
 
   <a href="#">Instagram</a>
   <a href="#">Discord</a>
   <a href="#">TikTok</a>
 </div>
+
+<!-- PARTICLES LIBRARY -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { speed: 1 }
+  }
+});
+</script>
 
 </body>
 </html>
